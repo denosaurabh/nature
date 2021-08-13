@@ -3,11 +3,11 @@ import { styled } from '@styled';
 const VisibleGrid: React.FC = () => {
   return (
     <GridContainer>
-      <Line css={{ t: '10%' }} />
+      <Line css={{ t: '8%' }} />
       <Line css={{ t: '40%' }} />
-      <Line css={{ t: '90%' }} />
+      <Line css={{ t: '85%' }} />
 
-      <Line css={{ l: '10%' }} vertical />
+      <Line css={{ l: '5%' }} vertical />
       <Line css={{ l: '60%' }} vertical />
     </GridContainer>
   );
@@ -21,16 +21,19 @@ const GridContainer = styled('div', {
 
 const Line = styled('hr', {
   width: '100%',
+  height: 1,
+
   position: 'absolute',
 
   opacity: 0.5,
 
-  color: '$davysGrey',
+  border: 0,
+  background: '$quickSilver',
 
   variants: {
     vertical: {
       true: {
-        width: 'unset',
+        width: 1,
         height: '100%',
       },
     },

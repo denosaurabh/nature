@@ -8,6 +8,10 @@ const { css, styled, theme } = createStitches({
       neutral: 'Neutral Face',
       modernist: 'Sk-Modernist',
     },
+    fontSizes: {
+      h1: '8rem',
+      h2: '6rem',
+    },
     colors: {
       davysGrey: '#595959ff',
       grayWeb: '#7f7f7fff',
@@ -15,6 +19,14 @@ const { css, styled, theme } = createStitches({
       lightGray: '#ccccccff',
       cultured: '#f2f2f2ff',
     },
+  },
+  media: {
+    ['mobile-small']: '(max-width: 300px)',
+    mobile: '(max-width: 480px)',
+    tablet: '(max-width: 768px)',
+    laptop: '(max-width: 1024px)',
+    desktop: '(max-width: 1200px)',
+    tv: '(min-width: 1201px)',
   },
   utils: {
     /* POSITIONING */
@@ -37,6 +49,22 @@ const { css, styled, theme } = createStitches({
     h: (value) => ({
       height: value,
     }),
+    /* MARGIN */
+    ml: (value) => ({
+      marginLeft: value,
+    }),
+    mr: (value) => ({
+      marginRight: value,
+    }),
+    mt: (value) => ({
+      marginTop: value,
+    }),
+    mb: (value) => ({
+      marginBottom: value,
+    }),
+    m: (value) => ({
+      margin: value,
+    }),
   },
 });
 
@@ -50,13 +78,32 @@ const globalStyles = globalCss({
     minHeight: '100vh',
 
     fontSize: '62.5%',
-    fontFamily: '$inter',
+    fontFamily: '$neutral',
     fontWeight: 400,
 
     backgroundColor: 'lightGray',
 
     width: '100%',
     height: 'fit-content',
+
+    '@laptop': {
+      fontSize: '58%',
+    },
+
+    '@tablet': {
+      fontSize: '54%',
+    },
+
+    '@mobile': {
+      fontSize: '48%',
+    },
+
+    '@mobile-small': {
+      fontSize: '42%',
+    },
+  },
+  a: {
+    color: 'inherit',
   },
   '@font-face': [
     {
@@ -84,6 +131,17 @@ const globalStyles = globalCss({
       fontDisplay: 'optional',
     },
   ],
+  '::-webkit-scrollbar': {
+    width: '10px',
+  },
+  '::-webkit-scrollbar-thumb': {
+    background: '$davysGrey',
+    borderRadius: '999px',
+  },
+  '::selection': {
+    background: '$davysGrey',
+    color: '$cultured',
+  },
 });
 
 export { css, styled, globalStyles, theme };

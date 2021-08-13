@@ -1,14 +1,7 @@
 import { styled } from '@styled';
 
-import VisibleGrid from '@components/visibleGrid';
-
 const Container: React.FC = ({ children }) => {
-  return (
-    <ContainerStyled>
-      <VisibleGrid />
-      {children}
-    </ContainerStyled>
-  );
+  return <ContainerStyled>{children}</ContainerStyled>;
 };
 
 export default Container;
