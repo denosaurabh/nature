@@ -14,7 +14,13 @@ const VisibleGrid: React.FC = () => {
 };
 
 const GridContainer = styled('div', {
-  position: 'absolute',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+
+  overflowY: 'hidden',
+  overflowX: 'hidden',
+
   width: '100%',
   height: '100%',
 });

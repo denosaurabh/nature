@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 import { styled } from '@styled';
 
+import { SmoothScrollHorizontal } from '@components/smoothScroll';
 import VisibleGrid from '@components/visibleGrid';
-import { SmoothScrollVertical } from '@components/smoothScroll';
 
 const pageVariants = {
   initial: { opacity: 0 },
@@ -26,7 +26,7 @@ interface PageProps {
   id: string;
 }
 
-const Page: React.FC<PageProps> = ({ children, id }) => {
+const HorizontalPage: React.FC<PageProps> = ({ children, id }) => {
   const router = useRouter();
 
   const handleAnimationComplete = () => {
@@ -45,16 +45,22 @@ const Page: React.FC<PageProps> = ({ children, id }) => {
       onAnimationComplete={handleAnimationComplete}
     >
       <VisibleGrid />
-      <SmoothScrollVertical>{children}</SmoothScrollVertical>
+      <SmoothScrollHorizontal>
+        <ContentContainer>{children}</ContentContainer>
+      </SmoothScrollHorizontal>
     </PageStyled>
   );
 };
 
-export default Page;
+export default HorizontalPage;
 
 const PageStyled = styled(motion.div, {
-  position: 'relative',
+  overflowY: 'hidden',
+});
+
+const ContentContainer = styled('div', {
+  display: 'flex',
 
   width: '100%',
-  height: '100vh',
+  height: '100%',
 });

@@ -1,74 +1,149 @@
-import React, {
-  useState,
-  useRef,
-  useCallback,
-  useLayoutEffect,
-  useEffect,
-} from 'react';
-import { useMotionValue, useSpring, motion } from 'framer-motion';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
+
 import ResizeObserver from 'resize-observer-polyfill';
+import {
+  useViewportScroll,
+  useTransform,
+  useSpring,
+  motion,
+} from 'framer-motion';
+import { styled } from '@styled';
 
-const ScrollContainer: React.FC = ({ children }) => {
-  const [window, setWindow] = useState(null);
-
+const SmoothScrollVertical: React.FC = ({ children }) => {
   const [contentHeight, setContentHeight] = useState(0);
-  const scrollContainerRef = useRef(null);
-  const scrollYmotionValue = useMotionValue(
-    -window?.pageYOffset || -window?.scrollY
-  );
-  const springPhysics = { stiffness: 28 };
-  const scrollYtransition = useSpring(scrollYmotionValue, springPhysics);
+  const scrollRef = useRef<HTMLElement>();
 
-  const getContentHeight = useCallback((entries) => {
+  const resizePageHeight = useCallback((entries) => {
     for (const entry of entries) {
-      const entryHeight = entry.contentRect.height;
-      setContentHeight(entryHeight);
+      setContentHeight(entry.contentRect.height);
     }
   }, []);
 
   useEffect(() => {
-    if (!window) return;
-    setWindow(window);
+    if (!scrollRef.current) return;
+
     setContentHeight(window.innerHeight);
-  }, []);
 
-  useLayoutEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
+    const resizeObserver = new ResizeObserver((entries: unknown) => {
+      resizePageHeight(entries);
+    });
 
-    const resizeObserver = new ResizeObserver((entries) =>
-      getContentHeight(entries)
-    );
-
-    resizeObserver.observe(scrollContainer);
+    scrollRef && resizeObserver.observe(scrollRef.current);
 
     return () => resizeObserver.disconnect();
-  }, [getContentHeight]);
+  }, [scrollRef, resizePageHeight]);
 
-  useEffect(() => {
-    if (!window) return;
+  const { scrollY } = useViewportScroll();
 
-    const trackScroll = () => {
-      scrollYmotionValue.set(-window.pageYOffset || -window.scrollY);
-    };
-
-    window.addEventListener('scroll', trackScroll);
-
-    return () => window.removeEventListener('scroll', trackScroll);
-  }, [, window, scrollYmotionValue]);
+  const transform = useTransform(
+    scrollY,
+    [0, contentHeight],
+    [0, -contentHeight]
+  );
+  const physics = { damping: 15, mass: 0.2, stiffness: 90 };
+  const spring = useSpring(transform, physics);
 
   return (
     <>
-      <motion.div
-        ref={scrollContainerRef}
-        style={{ y: scrollYtransition }}
-        className="scroll-container"
-      >
+      <VerticalScrollContainer ref={scrollRef} style={{ y: spring }}>
         {children}
-      </motion.div>
-
-      {/* <div style={{ height: contentHeight }} /> */}
+      </VerticalScrollContainer>
+      <div style={{ height: contentHeight }} />
     </>
   );
 };
 
-export default ScrollContainer;
+const SmoothScrollHorizontal: React.FC = ({ children }) => {
+  const scrollRef = useRef(null);
+  const contentRef = useRef(null);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [pageWidth, setPageWidth] = useState(0);
+  const [contentWidth, setContentWidth] = useState(0);
+
+  const onResize = useCallback((entries) => {
+    for (const entry of entries) {
+      setPageWidth(entry.contentRect.width);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!scrollRef) return;
+
+    setContentWidth(scrollRef.current.scrollWidth);
+  }, [scrollRef]);
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => onResize(entries));
+    resizeObserver.observe(contentRef.current);
+
+    return () => resizeObserver.disconnect();
+  }, [onResize]);
+
+  const { scrollYProgress } = useViewportScroll();
+  const transform = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, -contentWidth] //-contentWidth + pageWidth
+  );
+
+  const physics = { damping: 15, mass: 0.2, stiffness: 90 };
+  const spring = useSpring(transform, physics);
+
+  return (
+    <>
+      <HorizontalScrollContainer>
+        <HorizontalScroll
+          ref={scrollRef}
+          style={{ x: spring }}
+          onScroll={() => {
+            console.log('scrolling');
+          }}
+          className="scroll-content-vertical"
+        >
+          {children}
+        </HorizontalScroll>
+      </HorizontalScrollContainer>
+
+      <Content ref={contentRef} style={{ height: contentWidth }} />
+    </>
+  );
+};
+
+const VerticalScrollContainer = styled(motion.main, {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+
+  width: '100%',
+  height: 'fit-content',
+
+  willChange: 'transform',
+});
+
+const HorizontalScrollContainer = styled('div', {
+  position: 'fixed',
+  left: 0,
+  right: 0,
+
+  willChange: 'transform',
+});
+
+const HorizontalScroll = styled(motion.main, {
+  height: '100vh',
+  width: 'max-content',
+
+  // display: 'grid',
+  // gridTemplateColumns: 'repeat(auto-fill, 4%)',
+  // gridTemplateRows: 'repeat(auto-fill, 10%)',
+
+  overflow: 'hidden',
+
+  willChange: 'transform',
+});
+
+const Content = styled('div', {
+  width: '100vw',
+});
+
+export { SmoothScrollVertical, SmoothScrollHorizontal };

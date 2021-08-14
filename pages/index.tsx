@@ -16,7 +16,12 @@ const Home: React.FC = () => {
         </Link>
       </Header>
 
-      <Heading css={{ marginTop: '15rem', marginLeft: '15rem' }}>
+      <Heading
+        css={{
+          marginTop: '5%',
+          marginLeft: '10%',
+        }}
+      >
         What would life and nature would look like in other /
         <Span>Earth Like Planets?</Span>
       </Heading>
@@ -44,24 +49,29 @@ const Home: React.FC = () => {
         </TextBox>
       </MidBox>
 
-      <Heading css={{ fontSize: '4rem', margin: '15rem' }}>
+      <Heading css={{ fontSize: '4rem', margin: '8% 10%' }}>
         EXPLORING WHAT MIGHT BE HIDDEN AS A SECRET. EVEN FINDING OF A SINGLE
         BACKTERIA BEYOND EARTH WILL HELP ANSWER ONE OF HUMANITY BIGGEST QUESTION
       </Heading>
 
-      <Heading css={{ fontSize: '4rem', marginLeft: '30rem' }}>
+      <Heading css={{ fontSize: '4rem', marginLeft: '20%' }}>
         and we are finally on the verge to get the answer, infact until now we
-        have so many discoveries and eye on such planents that can help give us
-        answer.
+        have so many discoveries and eye on such plaents that can help give us
+        the answer.
       </Heading>
 
       <NavBox>
-        <Heading css={{ fontSize: '8rem', fontWeight: 'bold' }}>TITAN</Heading>
-        <Heading css={{ fontSize: '8rem', fontWeight: 'bold' }}>
-          KEPLER 62F
-        </Heading>
-        <Heading css={{ fontSize: '8rem', fontWeight: 'bold' }}>?</Heading>
+        <Heading as="h6">TITAN</Heading>
+        <Heading as="h6">KEPLER 62F</Heading>
+        <Heading as="h6">?</Heading>
       </NavBox>
+
+      <Heading css={{ fontSize: '3rem', margin: '10% 0 5rem 10%' }}>
+        All graphics, design and development is done by{' '}
+        <Link href="https://github.com/denosaurabh" passHref>
+          <a target="_blank">@denosaurabh</a>
+        </Link>
+      </Heading>
     </Page>
   );
 };
@@ -82,7 +92,8 @@ const TextBox = styled('div', {
   display: 'flex',
   flexDirection: 'column',
 
-  flex: 1,
+  width: '50rem',
+
   padding: '8rem 0',
 
   fontFamily: '$modernist',
@@ -90,6 +101,10 @@ const TextBox = styled('div', {
   color: '#383838',
 
   gap: '10rem',
+
+  '@mobile': {
+    width: '40rem',
+  }
 });
 
 const Text = styled('p', {
@@ -104,13 +119,22 @@ const Text = styled('p', {
 });
 
 const MidBox = styled('div', {
-  maxWidth: '70%',
-  margin: '10rem auto',
+  width: '100%',
+
+  padding: '10rem 5rem',
 
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
 
   gap: '10rem',
+
+  '@tablet': {
+    flexDirection: 'column',
+  },
+
+  '@laptop': {
+    gap: '5rem',
+  },
 });
 
 const NavBox = styled('div', {
@@ -118,11 +142,16 @@ const NavBox = styled('div', {
   margin: '50rem auto',
 
   display: 'flex',
-  flexDirection: 'column',
+  // flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
 
   textAlign: 'center',
 
   gap: '10rem',
+
+  h6: {
+    fontSize: '6rem',
+    minWidth: 'max-content',
+  },
 });

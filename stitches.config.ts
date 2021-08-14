@@ -74,6 +74,9 @@ const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
   },
+  html: {
+    cursor: "url('assets/img/cursor.png'), auto",
+  },
   'html, body, #__next': {
     minHeight: '100vh',
 
@@ -86,19 +89,19 @@ const globalStyles = globalCss({
     width: '100%',
     height: 'fit-content',
 
-    '@laptop': {
+    '@media (max-width: 1024px)': {
       fontSize: '58%',
     },
 
-    '@tablet': {
+    '@media (max-width: 768px)': {
       fontSize: '54%',
     },
 
-    '@mobile': {
+    '@media (max-width: 480px)': {
       fontSize: '48%',
     },
 
-    '@mobile-small': {
+    '@media (max-width: 300px)': {
       fontSize: '42%',
     },
   },
