@@ -84,7 +84,7 @@ const globalStyles = globalCss({
     fontFamily: '$neutral',
     fontWeight: 400,
 
-    backgroundColor: 'lightGray',
+    backgroundColor: '$lightGray',
 
     width: '100%',
     height: 'fit-content',

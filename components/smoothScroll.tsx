@@ -41,6 +41,8 @@ const SmoothScrollVertical: React.FC = ({ children }) => {
     [0, -contentHeight]
   );
   const physics = { damping: 15, mass: 0.2, stiffness: 90 };
+  // const physicsSmooth = { damping: 50, mass: 0.2, stiffness: 1000 };
+
   const spring = useSpring(transform, physics);
 
   return (

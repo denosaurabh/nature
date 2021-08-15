@@ -1,10 +1,12 @@
-import { styled } from '@stitches/react';
+import { motion } from 'framer-motion';
+import { styled } from '@styled';
 
 interface HeadingProps {
   css?: Record<string, unknown>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   as?: any;
   bigFirstLetter?: boolean;
+  block?: boolean;
 }
 
 const Heading: React.FC<HeadingProps> = ({
@@ -12,28 +14,55 @@ const Heading: React.FC<HeadingProps> = ({
   css,
   as,
   bigFirstLetter,
+  block,
 }) => {
   return (
-    <HeadingStyled css={css} as={as} bigFirstLetter={bigFirstLetter}>
-      {children}
-    </HeadingStyled>
+    <HeadingContainer
+      css={css}
+      block={block}
+      initial={block ? { backgroundPositionX: '-30%' } : null}
+      animate={block ? { backgroundPositionX: '0%' } : null}
+      transition={{ ease: 'anticipate', duration: 2 }}
+    >
+      <HeadingStyled as={as} bigFirstLetter={bigFirstLetter}>
+        {children}
+      </HeadingStyled>
+    </HeadingContainer>
   );
 };
 
 export default Heading;
 
-const HeadingStyled = styled('h1', {
-  fontFamily: '$neutral',
-  fontWeight: 'lighter',
-  fontSize: '6rem',
-
+const HeadingContainer = styled(motion.div, {
   width: '80%',
   paddingRight: '2rem',
 
   minWidth: '20rem',
   maxWidth: '80rem',
 
+  fontFamily: '$neutral',
+  fontWeight: 'lighter',
+  fontSize: '6rem',
+
   color: '#232323',
+
+  variants: {
+    block: {
+      true: {
+        backgroundImage: 'url("assets/img/space-black.jpg")',
+        backgroundRepeat: 'no-repeat',
+
+        color: 'transparent',
+        userSelect: 'none',
+      },
+    },
+  },
+});
+
+const HeadingStyled = styled('h1', {
+  fontFamily: 'inherit',
+  fontWeight: 'inherit',
+  fontSize: 'inherit',
 
   variants: {
     bigFirstLetter: {

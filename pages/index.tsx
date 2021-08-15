@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             malesuada. Sagittis vitae habitant nullam nisi at enim.
           </p>
 
-          <p>Enter the journey where we will see what other planets hold.</p>
+          <p>Enter the journey where we will explore other distinct planets and moons that may be hiding extraterrestrial life.</p>
         </TextBox>
       </MidBox>
 
@@ -66,11 +66,59 @@ const Home: React.FC = () => {
         <Heading as="h6">?</Heading>
       </NavBox>
 
-      <Heading css={{ fontSize: '3rem', margin: '10% 0 5rem 10%' }}>
+      <Heading
+        css={{
+          fontFamily: '$modernist',
+          fontSize: '3rem',
+          margin: '10% 0 5rem 10%',
+        }}
+      >
         All graphics, design and development is done by{' '}
         <Link href="https://github.com/denosaurabh" passHref>
           <a target="_blank">@denosaurabh</a>
         </Link>
+      </Heading>
+
+      <Heading
+        css={{
+          fontFamily: '$modernist',
+          fontSize: '3rem',
+          margin: '5% 0 5rem 10%',
+        }}
+      >
+        This website is made for a Web Jam submission I have participated in.
+      </Heading>
+
+      <Heading
+        css={{
+          fontFamily: '$modernist',
+          fontSize: '3rem',
+          margin: '5% 0 5rem 10%',
+        }}
+      >
+        CREDITS: 
+        <br />
+        <br />
+
+        <div>
+          <Image
+            className="header-img"
+            src="/assets/img/space-black.jpg"
+            alt="Saturn Moon Titan"
+            width={100}
+            height={100}
+            objectFit="cover"
+            quality={100}
+          />
+          Photo by{' '}
+          <a href="https://unsplash.com/@marjan_blan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Marjan Blan | @marjanblan
+          </a>{' '}
+          on{' '}
+          <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Unsplash
+          </a>
+        </div>
       </Heading>
     </Page>
   );
@@ -104,7 +152,7 @@ const TextBox = styled('div', {
 
   '@mobile': {
     width: '40rem',
-  }
+  },
 });
 
 const Text = styled('p', {
