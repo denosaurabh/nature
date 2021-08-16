@@ -10,6 +10,18 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ children, css }) => {
   return (
     <HeaderContainer css={css} exit={{ display: 'none' }}>
+      <Text
+        css={{
+          fontSize: '3rem',
+          fontFamily: '$maghfirea',
+          fontWeight: 'bold',
+          lineHeight: '18px',
+        }}
+      >
+        Sp-
+        <br />
+        ace
+      </Text>
       {children}
       <Text css={{ ml: 'auto' }}>
         exploration by <br />
@@ -26,10 +38,11 @@ export default Header;
 const HeaderContainer = styled(motion.div, {
   width: '100%',
 
-  padding: '2rem 4rem',
+  padding: '2rem 3rem 2rem 2rem',
 
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'space-between',
 
   a: {
     fontWeight: 'bold',

@@ -22,8 +22,8 @@ const Home: React.FC = () => {
           marginLeft: '10%',
         }}
       >
-        What would life and nature would look like in other /
-        <Span>Earth Like Planets?</Span>
+        Exploring Potential for Life and civilization on /
+        <Span>Earth Like Planets</Span>
       </Heading>
 
       <MidBox>
@@ -39,13 +39,15 @@ const Home: React.FC = () => {
         />
 
         <TextBox>
-          <p>
+          <s style={{ textDecorationThickness: '2rem' }}>
             Velit euismod nunc, neque, volutpat imperdiet adipiscing malesuada
             aliquam. Ut fames ultricies luctus ac. In leo luctus viverra
             malesuada. Sagittis vitae habitant nullam nisi at enim.
+          </s>
+          <p>
+            Journey where we will explore other distant planets and moon for
+            life and estabilishing civilization.
           </p>
-
-          <p>Enter the journey where we will explore other distinct planets and moons that may be hiding extraterrestrial life.</p>
         </TextBox>
       </MidBox>
 
@@ -65,6 +67,12 @@ const Home: React.FC = () => {
         <Heading as="h6">KEPLER 62F</Heading>
         <Heading as="h6">?</Heading>
       </NavBox>
+
+      {/* <Heading
+        css={{ margin: '0 auto', textAlign: 'center', alignSelf: 'center' }}
+      >
+        SAYING THAT THERE ARE NO ALIENS IS LIKE TAKING A TEASPOON OF WATER OUT OF OCEAN AND SAYING FISH DONT EXIST
+      </Heading> */}
 
       <Heading
         css={{
@@ -96,10 +104,9 @@ const Home: React.FC = () => {
           margin: '5% 0 5rem 10%',
         }}
       >
-        CREDITS: 
+        CREDITS:
         <br />
         <br />
-
         <div>
           <Image
             className="header-img"

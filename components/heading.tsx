@@ -1,8 +1,10 @@
+import { CSS } from '@stitches/react/types/css-util';
 import { motion } from 'framer-motion';
+
 import { styled } from '@styled';
 
 interface HeadingProps {
-  css?: Record<string, unknown>;
+  css?: CSS;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   as?: any;
   bigFirstLetter?: boolean;

@@ -11,6 +11,7 @@ const Titan: React.FC = () => {
     <HorizontalPage id="titan">
       <ContentBox>
         <Heading
+          as="h1"
           css={{
             fontSize: '12rem',
             marginTop: '25%',
@@ -48,6 +49,20 @@ const Titan: React.FC = () => {
           <p>Enter the journey where we will see what other planets hold.</p>
           <br />
         </Text>
+      </ContentBox>
+
+      <ContentBox css={{ width: '120rem' }} flex center>
+        <Heading
+          as="h3"
+          css={{ width: '100%', maxWidth: 'unset', fontSize: '4rem' }}
+        >
+          Titan is the second largest moon in our solar system, making it
+          slightly larger the planet Mercury, revolving around saturn
+          <br />
+          <br />
+          But what surprise us more is it&apos;s favourable qualities for life
+          and civilization, that no other planet exibit in our solar system.
+        </Heading>
       </ContentBox>
 
       <ContentBox
@@ -139,6 +154,49 @@ const Titan: React.FC = () => {
           quality={100}
         />
       </ContentBox>
+
+      <ContentBox center>
+        <InfoBox>
+          <h4>
+            But these opposite qualities does not make Titan any less good place
+            for making a civilization
+          </h4>
+          <p>Titan is full of opportunities</p>
+        </InfoBox>
+      </ContentBox>
+
+      <ContentBox css={{ width: '50rem', paddingTop: '10vh' }} flex flexColumn>
+        <Text>
+          But, this doesn&apos;t mean that life can&apos;t be present there.
+          Scientists has thinking that life can be present on the sub surface
+          where temp are kind enough for life to emerge. Another thing that
+          makes Titan so special is it&apos;s atmosphere, no where in the Solar
+          System other than Earth, Venus and Titan have their own atmosphere.
+        </Text>
+
+        <Text css={{ marginTop: '6rem' }}>
+          But, this doesn&apos;t mean that life can&apos;t be present there.
+          Scientists has thinking that life can be present on the sub surface
+          where temp are kind enough for life to emerge. Another thing that
+          makes Titan so special is it&apos;s atmosphere, no where in the Solar
+          System other than Earth, Venus and Titan have their own atmosphere.
+        </Text>
+      </ContentBox>
+
+      <ContentBox flex center>
+        <SectionBox>
+          <h2>ATMOSPHERE ON TITAN</h2>
+          <Image
+            className="section-img"
+            src="/assets/img/titanwater.png"
+            alt="Saturn Moon Titan"
+            width={800}
+            height={500}
+            objectFit="cover"
+            quality={100}
+          />
+        </SectionBox>
+      </ContentBox>
     </HorizontalPage>
   );
 };
@@ -180,6 +238,15 @@ const ContentBox = styled('div', {
     justifyBottom: {
       true: {
         justifyContent: 'flex-end',
+      },
+    },
+
+    center: {
+      true: {
+        display: 'flex',
+
+        alignItems: 'center',
+        justifyContent: 'center',
       },
     },
   },
@@ -226,5 +293,53 @@ const FeatureBox = styled('div', {
   p: {
     fontSize: '1.6rem',
     lineHeight: '140%',
+  },
+});
+
+const InfoBox = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+
+  width: '60rem',
+  gap: '4rem',
+
+  h4: {
+    fontFamily: '$neutral',
+    color: '#383838',
+    fontSize: '3.2rem',
+    fontWeight: '400',
+  },
+
+  p: {
+    fontFamily: '$modernist',
+    fontSize: '1.8rem',
+    lineHeight: '140%',
+  },
+});
+
+const SectionBox = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  width: '100%',
+
+  position: 'relative',
+
+  h2: {
+    fontFamily: '$neutral',
+    color: '$cultured',
+    fontSize: '5rem',
+    fontWeight: '400',
+
+    backgroundColor: '$davysGrey',
+
+    filter: '',
+
+    position: 'relative',
+    left: '25%',
+
+    zIndex: 100,
   },
 });
