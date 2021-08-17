@@ -12,15 +12,18 @@ const Header: React.FC<HeaderProps> = ({ children, css }) => {
     <HeaderContainer css={css} exit={{ display: 'none' }}>
       <Text
         css={{
-          fontSize: '3rem',
+          fontSize: '2.6rem',
           fontFamily: '$maghfirea',
           fontWeight: 'bold',
           lineHeight: '18px',
         }}
       >
-        Sp-
+        Na&#x25D7;
+        {/* &#x25EF; */}
         <br />
-        ace
+        ture
+        <br />
+        &#x25E1;
       </Text>
       {children}
       <Text css={{ ml: 'auto' }}>
@@ -38,7 +41,7 @@ export default Header;
 const HeaderContainer = styled(motion.div, {
   width: '100%',
 
-  padding: '2rem 3rem 2rem 2rem',
+  padding: '1rem 3rem 2rem 2rem',
 
   display: 'flex',
   alignItems: 'center',

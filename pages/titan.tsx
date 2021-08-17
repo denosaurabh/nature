@@ -324,18 +324,17 @@ const SectionBox = styled('div', {
   justifyContent: 'center',
 
   width: '100%',
-
   position: 'relative',
 
   h2: {
     fontFamily: '$neutral',
-    color: '$cultured',
+    color: '$davysGrey',
     fontSize: '5rem',
     fontWeight: '400',
 
-    backgroundColor: '$davysGrey',
+    padding: '1rem',
 
-    filter: '',
+    backgroundColor: '$lightGray',
 
     position: 'relative',
     left: '25%',

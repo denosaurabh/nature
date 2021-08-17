@@ -51,10 +51,12 @@ const HeadingContainer = styled(motion.div, {
   variants: {
     block: {
       true: {
-        backgroundImage: 'url("assets/img/space-black.jpg")',
-        backgroundRepeat: 'no-repeat',
+        // backgroundImage: 'url("assets/img/space-black.jpg")',
+        // backgroundRepeat: 'no-repeat',
 
-        color: 'transparent',
+        textDecoration: 'line-through',
+        textDecorationThickness: '40px',
+
         userSelect: 'none',
       },
     },

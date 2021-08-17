@@ -7,6 +7,9 @@ import Page from '@layouts/page';
 import Header from '@components/header';
 import Heading from '@components/heading';
 
+import Ellipse from '@figures/ellipse.svg';
+import IndexCircle from '@components/indexCircle';
+
 const Home: React.FC = () => {
   return (
     <Page id="home">
@@ -16,14 +19,17 @@ const Home: React.FC = () => {
         </Link>
       </Header>
 
+      <EllipseStyled css={{ top: '8%', left: '25%' }} />
+      <IndexCircle css={{ right: '-8%' }} />
+
       <Heading
         css={{
           marginTop: '5%',
           marginLeft: '10%',
         }}
       >
-        Exploring Potential for Life and civilization on /
-        <Span>Earth Like Planets</Span>
+        Exploring Nature, Alien Life and Environment on /
+        <Span>far moons & planets</Span>
       </Heading>
 
       <MidBox>
@@ -33,7 +39,6 @@ const Home: React.FC = () => {
           alt="Saturn Moon Titan"
           width={600}
           height={600}
-          // layout="fill"
           objectFit="cover"
           quality={100}
         />
@@ -45,8 +50,8 @@ const Home: React.FC = () => {
             malesuada. Sagittis vitae habitant nullam nisi at enim.
           </s>
           <p>
-            Journey where we will explore other distant planets and moon for
-            life and estabilishing civilization.
+            Journey to distant planets and moons where we will explore potential
+            alien life, nature and hidden secrets.
           </p>
         </TextBox>
       </MidBox>
@@ -63,9 +68,28 @@ const Home: React.FC = () => {
       </Heading>
 
       <NavBox>
-        <Heading as="h6">TITAN</Heading>
-        <Heading as="h6">KEPLER 62F</Heading>
-        <Heading as="h6">?</Heading>
+        <Heading as="h3">
+          CHOOSE YOUR <br /> DESTINATION
+        </Heading>
+
+        <PlanetBox>
+          <span>01.</span>
+          <h3>Titan &#x2197;</h3>
+          <p>
+            A water world containing organic compounds and under surface liquid
+            water oceans
+          </p>
+        </PlanetBox>
+        <PlanetBox>
+          <span>02.</span>
+          <h3>Kepler 62F &#x2197;</h3>
+          <p>A possible big earth and massive water world. </p>
+        </PlanetBox>
+        <PlanetBox>
+          <span>03.</span>
+          <h3>???</h3>
+          <p>Coming Soon</p>
+        </PlanetBox>
       </NavBox>
 
       {/* <Heading
@@ -193,20 +217,82 @@ const MidBox = styled('div', {
 });
 
 const NavBox = styled('div', {
-  maxWidth: '70%',
-  margin: '50rem auto',
+  width: '95%',
+  margin: '40rem auto',
 
   display: 'flex',
-  // flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-
-  textAlign: 'center',
+  flexDirection: 'column',
 
   gap: '10rem',
+
+  h3: {
+    fontSize: '6rem',
+    minWidth: 'max-content',
+  },
 
   h6: {
     fontSize: '6rem',
     minWidth: 'max-content',
   },
+});
+
+const PlanetBox = styled('div', {
+  width: '100%',
+
+  display: 'flex',
+  alignItems: 'center',
+
+  '@mobile': {
+    flexWrap: 'wrap',
+  },
+
+  span: {
+    fontFamily: '$maghfirea',
+    fontSize: '14rem',
+
+    color: '$quickSilver',
+
+    marginRight: '4rem',
+
+    '@tablet': {
+      fontSize: '8rem',
+      marginRight: '2rem',
+    },
+  },
+
+  h3: {
+    flex: 1,
+
+    fontFamily: '$neutral',
+    fontSize: '6.4rem',
+    fontWeight: 'lighter',
+    color: '#232323',
+
+    marginRight: '4rem',
+
+    '@tablet': {
+      fontSize: '4.8rem',
+      marginRight: '2rem',
+    },
+  },
+
+  p: {
+    fontFamily: '$modernist',
+    fontSize: '1.8rem',
+    color: '$grayWeb',
+
+    textAlign: 'right',
+
+    width: '30rem',
+    minWidth: '20rem',
+
+    '@mobile': {
+      flex: 1,
+    },
+  },
+});
+
+const EllipseStyled = styled(Ellipse, {
+  position: 'absolute',
+  zIndex: -10,
 });

@@ -18,7 +18,7 @@ const GridContainer = styled('div', {
   top: 0,
   left: 0,
 
-  backgroundImage: 'url(assets/img/background.jpg)',
+  backgroundImage: 'url(assets/img/background.wbep)',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 

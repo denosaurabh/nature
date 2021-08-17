@@ -21,6 +21,7 @@
     "paths": {
       "@layouts/*": ["layouts/*"],
       "@components/*": ["components/*"],
+      "@figures/*": ["figures/*"],
       "@styled": ["stitches.config.ts"]
     }
   },
