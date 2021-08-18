@@ -9,17 +9,41 @@ import Heading from '@components/heading';
 const Titan: React.FC = () => {
   return (
     <HorizontalPage id="titan">
-      <ContentBox>
+      <ContentBox
+        css={{
+          marginRight: '12rem',
+        }}
+      >
         <Heading
           as="h1"
           css={{
-            fontSize: '12rem',
-            marginTop: '25%',
+            fontSize: '16rem',
+            marginTop: '10%',
             marginLeft: '20%',
           }}
           bigFirstLetter
         >
           TITAN
+        </Heading>
+
+        <Heading
+          as="h1"
+          css={{
+            fontFamily: '$modernist',
+            fontSize: '3rem',
+            marginLeft: '20%',
+          }}
+        >
+          Saturn largest and Solar System second largest moon
+          <br />
+          <br />
+          &rarr; 886M miles away from Sun
+          <br />
+          <br />
+          &rarr; First discoved by Christiaan Huygens on 25 March 1655
+          <br />
+          <br />
+          &rarr; NASA&apos;s Planned mission to launch on 2027
         </Heading>
       </ContentBox>
 
@@ -39,10 +63,11 @@ const Titan: React.FC = () => {
         />
         <Text css={{ width: '40rem' }}>
           <p>
-            It is near impossible for the life as we know it to exist on the
-            surface of this moon due to it&apos;s extreme freezing temperatur,
-            so cold that the lowest temp record in Antartica (-83deg C) is oven
-            compared to average temp of -180 deg C on titan.
+            Titan is a very interesting planet to explore. It is near impossible
+            for the life as we know it to exist on the surface of this moon due
+            to it&apos;s extreme freezing temperature, so cold that the lowest
+            temp record in Antartica (-83deg C) is oven compared to average temp
+            of -180 deg C on titan.
           </p>
           <br />
           <br />
@@ -60,8 +85,8 @@ const Titan: React.FC = () => {
           slightly larger the planet Mercury, revolving around saturn
           <br />
           <br />
-          But what surprise us more is it&apos;s favourable qualities for life
-          and civilization, that no other planet exibit in our solar system.
+          But what surprise us more is it&apos;s rare qualities for life, that
+          no other planet exhibit in our solar system.
         </Heading>
       </ContentBox>
 
@@ -73,37 +98,41 @@ const Titan: React.FC = () => {
       >
         <FeatureContainer>
           <FeatureBox>
-            <h5>GEOGRAPHY</h5>
+            <h5>ATMOSPHERE</h5>
             <p>
-              But, this doesn&apos;t mean that life can&apos;t be present there.
-              Scientists has thinking that life can be present on the sub
-              surface where temp are kind enough for life to emerge.
+              Titan is the only moon in the Solar System with a atmosphere, The
+              atmospheric pressure Titan is about 60% more than of earth. It is
+              primarly composed of Nigrogen (94%), Methane (5%) and Hydrogon
+              (0.09%).
+            </p>
+          </FeatureBox>
+          <FeatureBox>
+            <h5>SIZE AND TEMPERATURE</h5>
+            <p>
+              Titan total diameter is about 5,150km, about the same as of Mars.
+              Titan is a cold place, with a average temperature of -180°C.
+              celsius, compared to coldest temp ever recorded on earth which is
+              -89.2°C.
             </p>
           </FeatureBox>
           <FeatureBox>
             <h5>GEOGRAPHY</h5>
             <p>
-              But, this doesn&apos;t mean that life can&apos;t be present there.
-              Scientists has thinking that life can be present on the sub
-              surface where temp are kind enough for life to emerge.
-            </p>
-          </FeatureBox>
-          <FeatureBox>
-            <h5>GEOGRAPHY</h5>
-            <p>
-              But, this doesn&apos;t mean that life can&apos;t be present there.
-              Scientists has thinking that life can be present on the sub
-              surface where temp are kind enough for life to emerge.
+              Similar to earth, Titan as has a complex weather cycle which rains
+              methane instead of water. There are found to be clouds, rivers,
+              lakes, cliffs and seas of hydrocarbons like methane and ethane.
             </p>
           </FeatureBox>
         </FeatureContainer>
         <FeatureContainer>
           <FeatureBox>
-            <h5>GEOGRAPHY</h5>
+            <h5>LIQUID WATER</h5>
             <p>
-              But, this doesn&apos;t mean that life can&apos;t be present there.
-              Scientists has thinking that life can be present on the sub
-              surface where temp are kind enough for life to emerge.
+              Titan is a rocky planet, containing water-bearing silicate rock at
+              {/* it&apos;s center. Surrounded by a water ice layer. Well it is too
+              cold for the water to stay liquid at the surface. So,  */}
+              It is thought to have liquid water at the subsurface, where there
+              is enough heat for the water to be liquid.
             </p>
           </FeatureBox>
         </FeatureContainer>
@@ -130,7 +159,7 @@ const Titan: React.FC = () => {
 
       <ContentBox css={{ margin: '0 20rem', gap: '2rem' }} flex>
         <FullImage
-          src="/assets/img/titanwater.png"
+          src="/assets/img/titansurface.png"
           alt="Saturn Moon Titan"
           width={1000}
           height={500}
@@ -138,7 +167,7 @@ const Titan: React.FC = () => {
           quality={100}
         />
         <FullImage
-          src="/assets/img/titanwater.png"
+          src="/assets/img/realistictitan.png"
           alt="Saturn Moon Titan"
           width={1000}
           height={500}
@@ -146,7 +175,7 @@ const Titan: React.FC = () => {
           quality={100}
         />
         <FullImage
-          src="/assets/img/titanwater.png"
+          src="/assets/img/dragonfly.png"
           alt="Saturn Moon Titan"
           width={1000}
           height={500}
@@ -177,9 +206,7 @@ const Titan: React.FC = () => {
         <Text css={{ marginTop: '6rem' }}>
           But, this doesn&apos;t mean that life can&apos;t be present there.
           Scientists has thinking that life can be present on the sub surface
-          where temp are kind enough for life to emerge. Another thing that
-          makes Titan so special is it&apos;s atmosphere, no where in the Solar
-          System other than Earth, Venus and Titan have their own atmosphere.
+          where temp are kind enough for life to emerge.
         </Text>
       </ContentBox>
 

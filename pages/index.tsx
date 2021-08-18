@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { styled } from '@styled';
 
@@ -11,6 +12,8 @@ import Ellipse from '@figures/ellipse.svg';
 import IndexCircle from '@components/indexCircle';
 
 const Home: React.FC = () => {
+  const router = useRouter();
+
   return (
     <Page id="home">
       <Header>
@@ -50,21 +53,25 @@ const Home: React.FC = () => {
             malesuada. Sagittis vitae habitant nullam nisi at enim.
           </s>
           <p>
-            Journey to distant planets and moons where we will explore potential
-            alien life, nature and hidden secrets.
+            Journey to distant planets and moons where we will explore how
+            potential alien life may look life, nature and their hidden secrets.
           </p>
         </TextBox>
       </MidBox>
 
       <Heading css={{ fontSize: '4rem', margin: '8% 10%' }}>
-        EXPLORING WHAT MIGHT BE HIDDEN AS A SECRET. EVEN FINDING OF A SINGLE
-        BACKTERIA BEYOND EARTH WILL HELP ANSWER ONE OF HUMANITY BIGGEST QUESTION
+        We always have been asking us what life and nature may would look like
+        in planets other than earth, that might exhibit life as ours. But, since
+        we haven&apos;t really something like us.
+        {/* In this
+        journey we will explore far moons and planets in search of life, */}
+        {/* EXPLORING WHAT MIGHT BE HIDDEN AS A SECRET. EVEN FINDING OF A SINGLE
+        BACKTERIA BEYOND EARTH WILL HELP ANSWER ONE OF HUMANITY BIGGEST QUESTION */}
+        {/* <Text css={{ fontSize: '3rem' }}> &quot;Are we alone&quot;</Text> */}
       </Heading>
 
       <Heading css={{ fontSize: '4rem', marginLeft: '20%' }}>
-        and we are finally on the verge to get the answer, infact until now we
-        have so many discoveries and eye on such plaents that can help give us
-        the answer.
+        In this exploration
       </Heading>
 
       <NavBox>
@@ -74,7 +81,7 @@ const Home: React.FC = () => {
 
         <PlanetBox>
           <span>01.</span>
-          <h3>Titan &#x2197;</h3>
+          <h3 onClick={() => router.push('/titan')}>Titan &#x2197;</h3>
           <p>
             A water world containing organic compounds and under surface liquid
             water oceans
@@ -82,12 +89,12 @@ const Home: React.FC = () => {
         </PlanetBox>
         <PlanetBox>
           <span>02.</span>
-          <h3>Kepler 62F &#x2197;</h3>
+          <h3 onClick={() => router.push('/kepler')}>Kepler 62F &#x2197;</h3>
           <p>A possible big earth and massive water world. </p>
         </PlanetBox>
         <PlanetBox>
           <span>03.</span>
-          <h3>???</h3>
+          <h3 onClick={() => router.push('/')}>???</h3>
           <p>Coming Soon</p>
         </PlanetBox>
       </NavBox>
@@ -128,28 +135,18 @@ const Home: React.FC = () => {
           margin: '5% 0 5rem 10%',
         }}
       >
-        CREDITS:
-        <br />
-        <br />
-        <div>
-          <Image
-            className="header-img"
-            src="/assets/img/space-black.jpg"
-            alt="Saturn Moon Titan"
-            width={100}
-            height={100}
-            objectFit="cover"
-            quality={100}
-          />
-          Photo by{' '}
-          <a href="https://unsplash.com/@marjan_blan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-            Marjan Blan | @marjanblan
-          </a>{' '}
-          on{' '}
-          <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-            Unsplash
-          </a>
-        </div>
+        This is a NON-Commercial project.
+      </Heading>
+
+      <Heading
+        css={{
+          fontFamily: '$modernist',
+          fontSize: '3rem',
+          margin: '5% 0 5rem 10%',
+        }}
+      >
+        The data and information shown in the website may not be completely
+        correct, due to time constraints and purpose of this project.
       </Heading>
     </Page>
   );
@@ -273,6 +270,11 @@ const PlanetBox = styled('div', {
     '@tablet': {
       fontSize: '4.8rem',
       marginRight: '2rem',
+    },
+
+    '&:hover': {
+      cursor: 'pointer',
+      textDecoration: 'underline',
     },
   },
 

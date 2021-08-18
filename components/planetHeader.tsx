@@ -1,9 +1,12 @@
+import { useRouter } from 'next/router';
 import { styled } from '@styled';
 
 const PlanetHeader: React.FC = () => {
+  const router = useRouter();
+
   return (
     <PlanetHeaderContainer>
-      <Text>
+      <Text onClick={() => router.back()}>
         &larr; <br />
         Back
       </Text>
@@ -29,8 +32,8 @@ const PlanetHeaderContainer = styled('header', {
   flexDirection: 'column',
   alignItems: 'center',
 
-  backgroundColor: '$lightGray',
-  borderRight: '1px solid $quickSilver',
+  // backgroundColor: '$lightGray',
+  // borderRight: '1px solid $quickSilver',
 
   '@mobile': {
     width: '100vw',
