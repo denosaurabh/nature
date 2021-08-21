@@ -13,6 +13,7 @@
     "@svgr/webpack": "^5.5.0",
     "framer-motion": "^4.1.17",
     "next": "11.0.1",
+    "preact": "^10.5.14",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "resize-observer-polyfill": "^1.5.1"

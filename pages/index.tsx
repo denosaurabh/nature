@@ -1,26 +1,69 @@
-import Image from 'next/image';
+import { useState } from 'react';
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { styled } from '@styled';
 
 import Page from '@layouts/page';
+
 import Header from '@components/header';
 import Heading from '@components/heading';
+import IndexCircle from '@components/indexCircle';
+import { AnimatedImageVertical } from '@components/image';
 
 import Ellipse from '@figures/ellipse.svg';
-import IndexCircle from '@components/indexCircle';
+import { motion } from 'framer-motion';
 
 const Home: React.FC = () => {
   const router = useRouter();
 
+  const [allQuotes, setAllQuotes] = useState({
+    quotes: [
+      {
+        text: `I'm sure the universe is full of intelligent life. It's just been too
+    intelligent to come here.`,
+        by: 'Carl Sagan',
+      },
+      {
+        text: `Two possibilities exist: Either we are alone in the Universe or we are not.
+        Both are equally terrifying.`,
+        by: 'Arthur C. Clarke',
+      },
+      {
+        text: `If it is just us, seems like an awful waste of space.`,
+        by: 'Carl Sagan',
+      },
+      {
+        text: `In the deepest sense the search for extraterrestrial intelligence is a search for ourselves.`,
+        by: 'Carl Sagan',
+      },
+    ],
+    currentQuote: 0,
+  });
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {}, 3000);
+
+  //   return () => clearInterval(interval);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [allQuotes]);
+
+  const onQuoteAnimationUpdate = (latest) => {
+    if (latest.opacity === 0) {
+      let nextQuoteNo = allQuotes.currentQuote + 1;
+
+      if (nextQuoteNo === allQuotes.quotes.length) {
+        nextQuoteNo = 0;
+      }
+
+      setAllQuotes({ ...allQuotes, currentQuote: nextQuoteNo });
+    }
+  };
+
   return (
     <Page id="home">
-      <Header>
-        <Link href="/video" passHref>
-          <Text css={{ ml: 'auto' }}>SEE VIDEO</Text>
-        </Link>
-      </Header>
+      <Header />
 
       <EllipseStyled css={{ top: '8%', left: '25%' }} />
       <IndexCircle css={{ right: '-8%' }} />
@@ -31,19 +74,17 @@ const Home: React.FC = () => {
           marginLeft: '10%',
         }}
       >
-        Exploring Nature, Alien Life and Environment on /
+        Explore Nature, Alien Life and Environment on /
         <Span>far moons & planets</Span>
       </Heading>
 
       <MidBox>
-        <Image
+        <AnimatedImageVertical
           className="header-img"
           src="/assets/img/titanwater.png"
           alt="Saturn Moon Titan"
           width={600}
           height={600}
-          objectFit="cover"
-          quality={100}
         />
 
         <TextBox>
@@ -54,7 +95,7 @@ const Home: React.FC = () => {
           </s>
           <p>
             Journey to distant planets and moons where we will explore how
-            potential alien life may look life, nature and their hidden secrets.
+            potential alien life may look like, nature and their hidden secrets.
           </p>
         </TextBox>
       </MidBox>
@@ -99,20 +140,33 @@ const Home: React.FC = () => {
         </PlanetBox>
       </NavBox>
 
-      {/* <Heading
-        css={{ margin: '0 auto', textAlign: 'center', alignSelf: 'center' }}
+      <Quote
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 2,
+          ease: 'anticipate',
+          repeat: Infinity,
+          repeatDelay: 2,
+          repeatType: 'reverse',
+          // transitionEnd: { opacity: 0 },
+        }}
+        onUpdate={onQuoteAnimationUpdate}
       >
-        SAYING THAT THERE ARE NO ALIENS IS LIKE TAKING A TEASPOON OF WATER OUT OF OCEAN AND SAYING FISH DONT EXIST
-      </Heading> */}
+        &quot;{allQuotes.quotes[allQuotes.currentQuote].text}&quot;
+        <Text css={{ textAlign: 'right', marginTop: '4rem', fontSize: '2rem' }}>
+          ― {allQuotes.quotes[allQuotes.currentQuote].by}
+        </Text>
+      </Quote>
 
       <Heading
         css={{
           fontFamily: '$modernist',
           fontSize: '3rem',
-          margin: '10% 0 5rem 10%',
+          margin: '25% 0 5rem 10%',
         }}
       >
-        All graphics, design and development is done by{' '}
+        All graphics (except credited), design and development is done by{' '}
         <Link href="https://github.com/denosaurabh" passHref>
           <a target="_blank">@denosaurabh</a>
         </Link>
@@ -145,8 +199,8 @@ const Home: React.FC = () => {
           margin: '5% 0 5rem 10%',
         }}
       >
-        The data and information shown in the website may not be completely
-        correct, due to time constraints and purpose of this project.
+        The graphics shown in the website may not be completely correct to the
+        specific topic, due to time constraints and purpose of this project.
       </Heading>
     </Page>
   );
@@ -297,4 +351,16 @@ const PlanetBox = styled('div', {
 const EllipseStyled = styled(Ellipse, {
   position: 'absolute',
   zIndex: -10,
+});
+
+const Quote = styled(motion.h6, {
+  margin: '0 auto',
+  width: '80%',
+
+  textAlign: 'center',
+  alignSelf: 'center',
+
+  fontFamily: '$modernist',
+  fontWeight: 'lighter',
+  fontSize: '4rem',
 });

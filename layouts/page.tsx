@@ -5,6 +5,7 @@ import { styled } from '@styled';
 
 import VisibleGrid from '@components/visibleGrid';
 import { SmoothScrollVertical } from '@components/smoothScroll';
+import Cursor from '@components/cursor';
 
 const pageVariants = {
   initial: { opacity: 0 },
@@ -29,10 +30,6 @@ interface PageProps {
 const Page: React.FC<PageProps> = ({ children, id }) => {
   const router = useRouter();
 
-  const handleAnimationComplete = () => {
-    console.log('Animation complete');
-  };
-
   return (
     <PageStyled
       id={id}
@@ -42,9 +39,9 @@ const Page: React.FC<PageProps> = ({ children, id }) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      onAnimationComplete={handleAnimationComplete}
     >
       <VisibleGrid />
+      <Cursor />
       <SmoothScrollVertical>{children}</SmoothScrollVertical>
     </PageStyled>
   );

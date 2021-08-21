@@ -11,7 +11,26 @@ const IndexCircle: React.FC<CircleProps> = ({ css }) => {
       <CircleBox>
         <Circle
           color="dark"
-          css={{ width: '10rem', height: '10rem', top: '10rem', zIndex: -1 }}
+          css={{
+            width: '10rem',
+            height: '10rem',
+            top: '10rem',
+            zIndex: -1,
+
+            '@mobile': {
+              top: '6rem',
+
+              width: '5rem',
+              height: '5rem',
+            },
+
+            '@tablet': {
+              top: '13rem',
+
+              width: '8rem',
+              height: '8rem',
+            },
+          }}
         />
         <Circle
           color="light"
@@ -19,6 +38,18 @@ const IndexCircle: React.FC<CircleProps> = ({ css }) => {
             width: '40rem',
             height: '40rem',
             zIndex: -2,
+
+            '@mobile': {
+              width: '20rem',
+              height: '20rem',
+            },
+
+            '@tablet': {
+              top: '6rem',
+
+              width: '30rem',
+              height: '30rem',
+            },
           }}
         />
       </CircleBox>

@@ -5,6 +5,7 @@ import { styled } from '@stitches/react';
 import HorizontalPage from '@layouts/horizontalPage';
 
 import Heading from '@components/heading';
+import { AnimatedImageHorizontal } from '@components/image';
 
 const Titan: React.FC = () => {
   return (
@@ -131,8 +132,9 @@ const Titan: React.FC = () => {
               Titan is a rocky planet, containing water-bearing silicate rock at
               {/* it&apos;s center. Surrounded by a water ice layer. Well it is too
               cold for the water to stay liquid at the surface. So,  */}
-              It is thought to have liquid water at the subsurface, where there
-              is enough heat for the water to be liquid.
+              After some research it found out that there is a subsurface ocen
+              of liquid water, mixed with ammonia and salts, where there is
+              enough heat for the water to be liquid.
             </p>
           </FeatureBox>
         </FeatureContainer>
@@ -158,29 +160,26 @@ const Titan: React.FC = () => {
       </ContentBox>
 
       <ContentBox css={{ margin: '0 20rem', gap: '2rem' }} flex>
-        <FullImage
+        <AnimatedImageHorizontal
+          className="img-titan-surface"
           src="/assets/img/titansurface.png"
           alt="Saturn Moon Titan"
           width={1000}
-          height={500}
-          objectFit="cover"
-          quality={100}
+          height={'100%'}
         />
-        <FullImage
+        <AnimatedImageHorizontal
+          className="img-titan-realistictitan"
           src="/assets/img/realistictitan.png"
           alt="Saturn Moon Titan"
           width={1000}
-          height={500}
-          objectFit="cover"
-          quality={100}
+          height={'100%'}
         />
-        <FullImage
+        <AnimatedImageHorizontal
+          className="img-titan-dragonfly"
           src="/assets/img/dragonfly.png"
           alt="Saturn Moon Titan"
           width={1000}
-          height={500}
-          objectFit="cover"
-          quality={100}
+          height={'100%'}
         />
       </ContentBox>
 
@@ -223,6 +222,23 @@ const Titan: React.FC = () => {
             quality={100}
           />
         </SectionBox>
+      </ContentBox>
+      <ContentBox flex flexColumn css={{ margin: '10vh 10rem', gap: '2rem' }}>
+        <Heading>Credits</Heading>
+        <Text
+          as="a"
+          href="https://solarsystem.nasa.gov/moons/saturn-moons/titan/in-depth/"
+          target="_blank"
+        >
+          https://solarsystem.nasa.gov/moons/saturn-moons/titan/in-depth/
+        </Text>
+        <Text
+          as="a"
+          href="https://en.wikipedia.org/wiki/Titan_(moon)"
+          target="_blank"
+        >
+          https://en.wikipedia.org/wiki/Titan_(moon)
+        </Text>
       </ContentBox>
     </HorizontalPage>
   );
@@ -289,9 +305,9 @@ const Text = styled('div', {
   color: '#383838',
 });
 
-const FullImage = styled(Image, {
-  height: '100%',
-});
+// const FullImage = styled(Image, {
+//   height: '100%',
+// });
 
 const FeatureContainer = styled('div', {
   display: 'flex',

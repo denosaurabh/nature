@@ -74,9 +74,6 @@ const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
   },
-  html: {
-    cursor: "url('assets/img/cursor.png'), auto",
-  },
   'html, body, #__next': {
     minHeight: '100vh',
 
