@@ -112,7 +112,6 @@ const globalStyles = globalCss({
           url('/assets/fonts/Maghfirea/MaghfireaRegular.woff') format('woff')`,
       fontWeight: 'normal',
       fontStyle: 'normal',
-      fontDisplay: 'optional',
     },
     {
       fontFamily: 'Neutral Face',
@@ -120,7 +119,6 @@ const globalStyles = globalCss({
           url('/assets/fonts/NeutralFace/NeutralFaceRegular.woff') format('woff')`,
       fontWeight: 'normal',
       fontStyle: 'normal',
-      fontDisplay: 'optional',
     },
     {
       fontFamily: 'Sk-Modernist',
@@ -128,7 +126,6 @@ const globalStyles = globalCss({
           url('/assets/fonts/SkModernist/Sk-Modernist-Regular.woff') format('woff')`,
       fontWeight: 'normal',
       fontStyle: 'normal',
-      fontDisplay: 'optional',
     },
   ],
   '::-webkit-scrollbar': {

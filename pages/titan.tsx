@@ -63,16 +63,10 @@ const Titan: React.FC = () => {
           quality={100}
         />
         <Text css={{ width: '40rem' }}>
-          <p>
-            Titan is a very interesting planet to explore. It is near impossible
-            for the life as we know it to exist on the surface of this moon due
-            to it&apos;s extreme freezing temperature, so cold that the lowest
-            temp record in Antartica (-83deg C) is oven compared to average temp
-            of -180 deg C on titan.
-          </p>
+          <p>Titan is a very interesting moon to explore.</p>
           <br />
           <br />
-          <p>Enter the journey where we will see what other planets hold.</p>
+          <p>Learn more about Titan &rarr;</p>
           <br />
         </Text>
       </ContentBox>
@@ -82,12 +76,13 @@ const Titan: React.FC = () => {
           as="h3"
           css={{ width: '100%', maxWidth: 'unset', fontSize: '4rem' }}
         >
-          Titan is the second largest moon in our solar system, making it
-          slightly larger the planet Mercury, revolving around saturn
+          Titan is the only moon in the Solar System to have a dense atmosphere
+          and only moon known to have stable bodies of liquids on it&apos;s
+          surface and subsurface.
           <br />
           <br />
-          But what surprise us more is it&apos;s rare qualities for life, that
-          no other planet exhibit in our solar system.
+          But what surprise us more is it&apos;s rare qualities for supporting
+          life as we know it, that no other planet exhibit in our solar system.
         </Heading>
       </ContentBox>
 
@@ -176,7 +171,7 @@ const Titan: React.FC = () => {
         />
         <AnimatedImageHorizontal
           className="img-titan-dragonfly"
-          src="/assets/img/dragonfly.png"
+          src="/assets/img/dragonfly.webp"
           alt="Saturn Moon Titan"
           width={1000}
           height={'100%'}
@@ -193,25 +188,9 @@ const Titan: React.FC = () => {
         </InfoBox>
       </ContentBox>
 
-      <ContentBox css={{ width: '50rem', paddingTop: '10vh' }} flex flexColumn>
-        <Text>
-          But, this doesn&apos;t mean that life can&apos;t be present there.
-          Scientists has thinking that life can be present on the sub surface
-          where temp are kind enough for life to emerge. Another thing that
-          makes Titan so special is it&apos;s atmosphere, no where in the Solar
-          System other than Earth, Venus and Titan have their own atmosphere.
-        </Text>
-
-        <Text css={{ marginTop: '6rem' }}>
-          But, this doesn&apos;t mean that life can&apos;t be present there.
-          Scientists has thinking that life can be present on the sub surface
-          where temp are kind enough for life to emerge.
-        </Text>
-      </ContentBox>
-
       <ContentBox flex center>
         <SectionBox>
-          <h2>ATMOSPHERE ON TITAN</h2>
+          <h2>LIFE ON TITAN</h2>
           <Image
             className="section-img"
             src="/assets/img/titanwater.png"
@@ -222,6 +201,23 @@ const Titan: React.FC = () => {
             quality={100}
           />
         </SectionBox>
+
+        <ContentBox css={{ width: '70rem' }} flex flexColumn>
+          <Text>
+            But, this doesn&apos;t mean that life can&apos;t be present there.
+            Scientists has thinking that life can be present on the sub surface
+            where temp are kind enough for life to emerge. Another thing that
+            makes Titan so special is it&apos;s atmosphere, no where in the
+            Solar System other than Earth, Venus and Titan have their own
+            atmosphere.
+          </Text>
+
+          <Text css={{ marginTop: '6rem' }}>
+            But, this doesn&apos;t mean that life can&apos;t be present there.
+            Scientists has thinking that life can be present on the sub surface
+            where temp are kind enough for life to emerge.
+          </Text>
+        </ContentBox>
       </ContentBox>
       <ContentBox flex flexColumn css={{ margin: '10vh 10rem', gap: '2rem' }}>
         <Heading>Credits</Heading>
@@ -238,6 +234,13 @@ const Titan: React.FC = () => {
           target="_blank"
         >
           https://en.wikipedia.org/wiki/Titan_(moon)
+        </Text>
+        <Text
+          as="a"
+          href="https://www.nasa.gov/dragonfly/images/index.html"
+          target="_blank"
+        >
+          https://www.nasa.gov/dragonfly/images/index.html
         </Text>
       </ContentBox>
     </HorizontalPage>
@@ -363,6 +366,8 @@ const InfoBox = styled('div', {
 
 const SectionBox = styled('div', {
   display: 'flex',
+  // flexDirection: 'column',
+
   alignItems: 'center',
   justifyContent: 'center',
 

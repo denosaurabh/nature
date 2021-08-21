@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { AnimatePresence, motion } from 'framer-motion';
+import { DefaultSeo } from 'next-seo';
 
 import { globalStyles } from '@styled';
 
@@ -16,6 +17,21 @@ const App: React.FC<AppProps> = ({ Component, pageProps, router }) => {
         transition={{ duration: 0 }}
         exit={{ x: 0 }}
       >
+        <DefaultSeo
+          title="Nature"
+          description="Exploring far Planets and Moons for Alien Life and Nature"
+          openGraph={{
+            type: 'website',
+            locale: 'en_IE',
+            url: 'https://nature-denosaurabh.vercel.app/',
+            site_name: 'Nature',
+          }}
+          twitter={{
+            handle: '@denosaurabh',
+            site: '@denosaurabh',
+            cardType: 'summary_large_image',
+          }}
+        />
         <Component {...pageProps} key={router.route} />
       </motion.div>
     </AnimatePresence>

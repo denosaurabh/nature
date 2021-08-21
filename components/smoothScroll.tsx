@@ -38,7 +38,7 @@ const SmoothScrollVertical: React.FC = ({ children }) => {
   const transform = useTransform(
     scrollY,
     [0, contentHeight],
-    [0, -contentHeight]
+    [0, -contentHeight],
   );
   const physics = { damping: 15, mass: 0.2, stiffness: 90 };
   // const physicsSmooth = { damping: 50, mass: 0.2, stiffness: 1000 };
@@ -47,7 +47,13 @@ const SmoothScrollVertical: React.FC = ({ children }) => {
 
   return (
     <>
-      <VerticalScrollContainer ref={scrollRef} style={{ y: spring }}>
+      <VerticalScrollContainer
+        onDrag={() => {
+          console.log('page dragging');
+        }}
+        ref={scrollRef}
+        style={{ y: spring }}
+      >
         {children}
       </VerticalScrollContainer>
       <div style={{ height: contentHeight }} />

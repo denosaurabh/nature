@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 import { styled } from '@styled';
 
@@ -13,7 +14,7 @@ import IndexCircle from '@components/indexCircle';
 import { AnimatedImageVertical } from '@components/image';
 
 import Ellipse from '@figures/ellipse.svg';
-import { motion } from 'framer-motion';
+import Saturn from '@figures/saturn.svg';
 
 const Home: React.FC = () => {
   const router = useRouter();
@@ -65,7 +66,7 @@ const Home: React.FC = () => {
     <Page id="home">
       <Header />
 
-      <EllipseStyled css={{ top: '8%', left: '25%' }} />
+      <EllipseStyled css={{ top: '6%', left: '25%' }} />
       <IndexCircle css={{ right: '-8%' }} />
 
       <Heading
@@ -139,6 +140,8 @@ const Home: React.FC = () => {
           <p>Coming Soon</p>
         </PlanetBox>
       </NavBox>
+
+      <SaturnSvg />
 
       <Quote
         initial={{ opacity: 0 }}
@@ -363,4 +366,19 @@ const Quote = styled(motion.h6, {
   fontFamily: '$modernist',
   fontWeight: 'lighter',
   fontSize: '4rem',
+});
+
+const SaturnSvg = styled(Saturn, {
+  width: '60rem',
+  height: '60rem',
+
+  position: 'absolute',
+  top: '70%',
+
+  '@mobile': {
+    top: '75%',
+
+    width: '50rem',
+    height: '50rem',
+  },
 });
