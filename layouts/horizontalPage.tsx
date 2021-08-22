@@ -6,6 +6,7 @@ import { styled } from '@styled';
 import { SmoothScrollHorizontal } from '@components/smoothScroll';
 import VisibleGrid from '@components/visibleGrid';
 import PlanetHeader from '@components/planetHeader';
+import Cursor from '@components/cursor';
 
 const pageVariants = {
   initial: { opacity: 0 },
@@ -47,6 +48,7 @@ const HorizontalPage: React.FC<PageProps> = ({ children, id }) => {
     >
       <VisibleGrid />
       <PlanetHeader />
+      <Cursor />
       <SmoothScrollHorizontal>
         <ContentContainer>{children}</ContentContainer>
       </SmoothScrollHorizontal>
