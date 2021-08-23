@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-import { styled } from '@stitches/react';
+import { styled } from '@styled';
 
 import HorizontalPage from '@layouts/horizontalPage';
 
 import Heading from '@components/heading';
 import { AnimatedImageHorizontal } from '@components/image';
+import Text from '@components/text';
+import ContentBox from '@components/contentBox';
+import PlanetBox from '@components/planetBox';
+import NavBox from '@components/navBox';
+import { FeatureBox, FeatureContainer } from '@components/featureBox';
 
 const Titan: React.FC = () => {
   const router = useRouter();
@@ -347,98 +352,11 @@ const Titan: React.FC = () => {
 
 export default Titan;
 
-/*
-
-It is near impossible for the life as we know it to exist on the surface of the planet due to it's extreme freezing temperature, soo cold that the lowest temp record in Antartica (-83deg C) is oven compared to average temp of -180 deg C on titan. 
-
-But, this doesn't mean that life can't be present there. Scientists has thinking that life can be present on the sub surface where temp are kind enough for life to emerge.
-
-Another thing that makes Titan so special is it's atmosphere, no where in the Solar System other than Earth, Venus and Titan have their own atmosphere. 
-
-*/
-
-const ContentBox = styled('div', {
-  width: 'fit-content',
-  margin: '0 5rem',
-
-  variants: {
-    flex: {
-      true: {
-        display: 'flex',
-      },
-    },
-    flexColumn: {
-      true: {
-        flexDirection: 'column',
-      },
-    },
-
-    alignBottom: {
-      true: {
-        alignItems: 'flex-end',
-      },
-    },
-
-    justifyBottom: {
-      true: {
-        justifyContent: 'flex-end',
-      },
-    },
-
-    center: {
-      true: {
-        display: 'flex',
-
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-    },
-  },
-});
-
 const MainImage = styled(Image, {
   marginTop: '5rem',
 });
 
-const Text = styled('div', {
-  fontFamily: '$modernist',
-  fontSize: '1.8rem',
-  color: '#383838',
-});
 
-// const FullImage = styled(Image, {
-//   height: '100%',
-// });
-
-const FeatureContainer = styled('div', {
-  display: 'flex',
-  gap: '8rem',
-});
-
-const FeatureBox = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-
-  width: '40rem',
-  gap: '2rem',
-
-  margin: '4rem',
-
-  fontFamily: '$modernist',
-  fontSize: '1.6rem',
-  color: '#383838',
-
-  h5: {
-    fontSize: '1.8rem',
-    fontWeight: 'bold',
-  },
-
-  p: {
-    fontSize: '1.6rem',
-    lineHeight: '140%',
-  },
-});
 
 const InfoBox = styled('div', {
   display: 'flex',
@@ -485,86 +403,5 @@ const SectionBox = styled('div', {
     left: '25%',
 
     zIndex: 100,
-  },
-});
-
-const NavBox = styled('div', {
-  width: '100%',
-  margin: '5rem auto',
-
-  display: 'flex',
-  flexDirection: 'column',
-
-  gap: '10rem',
-
-  h3: {
-    fontSize: '6rem',
-    minWidth: 'max-content',
-  },
-
-  h6: {
-    fontSize: '6rem',
-    minWidth: 'max-content',
-  },
-});
-
-const PlanetBox = styled('div', {
-  width: '100%',
-
-  display: 'flex',
-  alignItems: 'center',
-
-  '@mobile': {
-    flexWrap: 'wrap',
-  },
-
-  span: {
-    fontFamily: '$maghfirea',
-    fontSize: '14rem',
-
-    color: '$quickSilver',
-
-    marginRight: '4rem',
-
-    '@tablet': {
-      fontSize: '8rem',
-      marginRight: '2rem',
-    },
-  },
-
-  h3: {
-    flex: 1,
-
-    fontFamily: '$neutral',
-    fontSize: '6.4rem',
-    fontWeight: 'lighter',
-    color: '#232323',
-
-    marginRight: '4rem',
-
-    '@tablet': {
-      fontSize: '4.8rem',
-      marginRight: '2rem',
-    },
-
-    '&:hover': {
-      cursor: 'pointer',
-      textDecoration: 'underline',
-    },
-  },
-
-  p: {
-    fontFamily: '$modernist',
-    fontSize: '1.8rem',
-    color: '$grayWeb',
-
-    textAlign: 'right',
-
-    width: '30rem',
-    minWidth: '20rem',
-
-    '@mobile': {
-      flex: 1,
-    },
   },
 });

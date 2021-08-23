@@ -15,6 +15,8 @@ import { AnimatedImageVertical } from '@components/image';
 
 import Ellipse from '@figures/ellipse.svg';
 import Saturn from '@figures/saturn.svg';
+import PlanetBox from '@components/planetBox';
+import NavBox from '@components/navBox';
 
 const Home: React.FC = () => {
   const router = useRouter();
@@ -116,7 +118,7 @@ const Home: React.FC = () => {
         In this exploration
       </Heading>
 
-      <NavBox>
+      <NavBox css={{ margin: '40rem auto', width: '88%' }}>
         <Heading as="h3">
           CHOOSE YOUR <br /> DESTINATION
         </Heading>
@@ -125,8 +127,8 @@ const Home: React.FC = () => {
           <span>01.</span>
           <h3 onClick={() => router.push('/titan')}>Titan &#x2197;</h3>
           <p>
-            A water world containing organic compounds and under surface liquid
-            water oceans
+            A world containing organic compounds and subsurface liquid water
+            oceans
           </p>
         </PlanetBox>
         <PlanetBox>
@@ -152,7 +154,6 @@ const Home: React.FC = () => {
           repeat: Infinity,
           repeatDelay: 2,
           repeatType: 'reverse',
-          // transitionEnd: { opacity: 0 },
         }}
         onUpdate={onQuoteAnimationUpdate}
       >
@@ -267,87 +268,6 @@ const MidBox = styled('div', {
 
   '@laptop': {
     gap: '5rem',
-  },
-});
-
-const NavBox = styled('div', {
-  width: '95%',
-  margin: '40rem auto',
-
-  display: 'flex',
-  flexDirection: 'column',
-
-  gap: '10rem',
-
-  h3: {
-    fontSize: '6rem',
-    minWidth: 'max-content',
-  },
-
-  h6: {
-    fontSize: '6rem',
-    minWidth: 'max-content',
-  },
-});
-
-const PlanetBox = styled('div', {
-  width: '100%',
-
-  display: 'flex',
-  alignItems: 'center',
-
-  '@mobile': {
-    flexWrap: 'wrap',
-  },
-
-  span: {
-    fontFamily: '$maghfirea',
-    fontSize: '14rem',
-
-    color: '$quickSilver',
-
-    marginRight: '4rem',
-
-    '@tablet': {
-      fontSize: '8rem',
-      marginRight: '2rem',
-    },
-  },
-
-  h3: {
-    flex: 1,
-
-    fontFamily: '$neutral',
-    fontSize: '6.4rem',
-    fontWeight: 'lighter',
-    color: '#232323',
-
-    marginRight: '4rem',
-
-    '@tablet': {
-      fontSize: '4.8rem',
-      marginRight: '2rem',
-    },
-
-    '&:hover': {
-      cursor: 'pointer',
-      textDecoration: 'underline',
-    },
-  },
-
-  p: {
-    fontFamily: '$modernist',
-    fontSize: '1.8rem',
-    color: '$grayWeb',
-
-    textAlign: 'right',
-
-    width: '30rem',
-    minWidth: '20rem',
-
-    '@mobile': {
-      flex: 1,
-    },
   },
 });
 

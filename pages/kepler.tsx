@@ -1,90 +1,95 @@
-import { styled } from '@stitches/react';
+import { useRouter } from 'next/router';
 
 import HorizontalPage from '@layouts/horizontalPage';
 
 import Heading from '@components/heading';
+import ContentBox from '@components/contentBox';
+import Text from '@components/text';
+import PlanetBox from '@components/planetBox';
+import NavBox from '@components/navBox';
 
 const Kepler: React.FC = () => {
+  const router = useRouter();
+
   return (
     <HorizontalPage id="titan">
-      <ContentBox
-        css={{
-          marginRight: '12rem',
-        }}
-      >
+      <ContentBox flex alignBottom>
         <Heading
           as="h1"
           css={{
-            fontSize: '16rem',
+            width: '250rem',
+            maxWidth: 'unset',
+            fontSize: '32rem',
             marginTop: '10%',
             marginLeft: '20%',
           }}
-          bigFirstLetter
         >
-          TITAN
+          KEPLER-62F
         </Heading>
+      </ContentBox>
 
-        <Heading
-          as="h1"
-          css={{
-            fontFamily: '$modernist',
-            fontSize: '3rem',
-            marginLeft: '20%',
-          }}
+      <ContentBox
+        flex
+        alignBottom
+        css={{ padding: '10% 0 6% 0', width: '50rem' }}
+      >
+        <Text>
+          Kepler-62f also known as Super Earth, is a exoplanet oribiting the
+          star Kepler 62, which is about 990 light years away from Earth in the
+          constellation of Lyra. It was first discovered by NASA&apos;s Kepler
+          Spacecraft.
+        </Text>
+      </ContentBox>
+
+      <ContentBox
+        flex
+        flexColumn
+        css={{
+          padding: '10vh 10rem',
+          gap: '2rem',
+          borderLeft: '1px solid #999999',
+          borderRight: '1px solid #999999',
+        }}
+      >
+        <Heading>Credits</Heading>
+        <Text
+          as="a"
+          href="https://en.wikipedia.org/wiki/Kepler-62f"
+          target="_blank"
         >
-          Saturn largest and Solar System second largest moon
-          <br />
-          <br />
-          &rarr; 886M miles away from Sun
-          <br />
-          <br />
-          &rarr; First discoved by Christiaan Huygens on 25 March 1655
-          <br />
-          <br />
-          &rarr; NASA&apos;s Planned mission to launch on 2027
-        </Heading>
+          https://en.wikipedia.org/wiki/Kepler-62f
+        </Text>
+      </ContentBox>
+
+      <ContentBox>
+        <NavBox>
+          <Heading as="h3">
+            CHOOSE NEXT <br /> DESTINATION
+          </Heading>
+
+          <PlanetBox>
+            <span>&rarr;</span>
+            <h3 onClick={() => router.push('/titan')}>TITAN &#x2197;</h3>
+            <p>
+              A world containing organic compounds and subsurface liquid water
+              oceans
+            </p>
+          </PlanetBox>
+
+          <PlanetBox>
+            <span>&larr;</span>
+            <h3 onClick={() => router.push('/')}>Home</h3>
+          </PlanetBox>
+
+          <PlanetBox>
+            <span>|</span>
+            <h3>Thanks for Watching</h3>
+            <span>|</span>
+          </PlanetBox>
+        </NavBox>
       </ContentBox>
     </HorizontalPage>
   );
 };
 
 export default Kepler;
-
-const ContentBox = styled('div', {
-  width: 'fit-content',
-  margin: '0 5rem',
-
-  variants: {
-    flex: {
-      true: {
-        display: 'flex',
-      },
-    },
-    flexColumn: {
-      true: {
-        flexDirection: 'column',
-      },
-    },
-
-    alignBottom: {
-      true: {
-        alignItems: 'flex-end',
-      },
-    },
-
-    justifyBottom: {
-      true: {
-        justifyContent: 'flex-end',
-      },
-    },
-
-    center: {
-      true: {
-        display: 'flex',
-
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-    },
-  },
-});
