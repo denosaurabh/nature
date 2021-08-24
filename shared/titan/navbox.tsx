@@ -18,7 +18,7 @@ const TitanNavbox: React.FC = () => {
         <PlanetBox>
           <span>&rarr;</span>
           <h3 onClick={() => router.push('/kepler')}>KEPLER 62F &#x2197;</h3>
-          <p>A possible big earth and massive water world. </p>
+          <p>A possible Super Earth and massive water world. </p>
         </PlanetBox>
 
         <PlanetBox>

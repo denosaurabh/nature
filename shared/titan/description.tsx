@@ -14,7 +14,7 @@ const TitanDescription: React.FC = () => {
     >
       <MainImage
         className="main-image"
-        src="/assets/img/titanwater.png"
+        src="/assets/img/titanwater.webp"
         alt="Saturn Moon Titan"
         width={700}
         height={500}

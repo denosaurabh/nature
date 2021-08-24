@@ -29,7 +29,9 @@ const Header: React.FC<HeaderProps> = ({ children, css }) => {
       <Text css={{ ml: 'auto' }}>
         exploration by <br />
         <Link href="https://github.com/denosaurabh" passHref>
-          <a target="_blank">@denosaurabh</a>
+          <a target="_blank" rel="noreferrer">
+            @denosaurabh
+          </a>
         </Link>
       </Text>
     </HeaderContainer>

@@ -13,7 +13,9 @@ const IndexFooter: React.FC = () => {
       >
         All graphics (except credited), design and development is done by{' '}
         <Link href="https://github.com/denosaurabh" passHref>
-          <a target="_blank">@denosaurabh</a>
+          <a target="_blank" rel="noreferrer">
+            @denosaurabh
+          </a>
         </Link>
       </Heading>
 
@@ -44,8 +46,9 @@ const IndexFooter: React.FC = () => {
           margin: '5% 0 5rem 10%',
         }}
       >
-        The graphics shown in the website may not be completely correct to the
-        specific topic, due to time constraints and purpose of this project.
+        The content and graphics shown in the website may not be completely
+        correct or outdated to the specific topic, due to time constraints and purpose of
+        this project. Please check the credits for each topic, if you want to get up to date and correct information.
       </Heading>
     </>
   );

@@ -7,6 +7,10 @@ import { globalStyles } from '@styled';
 const App: React.FC<AppProps> = ({ Component, pageProps, router }) => {
   globalStyles();
 
+  console.log(
+    `eyy! you code, here's the Github repo: https://github.com/denosaurabh/nature`
+  );
+
   return (
     <AnimatePresence
       exitBeforeEnter

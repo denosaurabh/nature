@@ -1,8 +1,8 @@
-import { styled } from '@styled';
 import Image from 'next/image';
 
 import ContentBox from '@components/contentBox';
 import Text from '@components/text';
+import SectionBox from '@components/sectionBox';
 
 const TitanLife: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const TitanLife: React.FC = () => {
           <h2>LIFE ON TITAN</h2>
           <Image
             className="section-img"
-            src="/assets/img/titanwater.png"
+            src="/assets/img/titanwater.webp"
             alt="Saturn Moon Titan"
             width={800}
             height={500}
@@ -54,29 +54,3 @@ const TitanLife: React.FC = () => {
 };
 
 export default TitanLife;
-
-const SectionBox = styled('div', {
-  display: 'flex',
-
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-
-  width: '100%',
-  position: 'relative',
-
-  h2: {
-    fontFamily: '$neutral',
-    color: '$davysGrey',
-    fontSize: '5rem',
-    fontWeight: '400',
-
-    padding: '1rem',
-
-    backgroundColor: '$lightGray',
-
-    position: 'relative',
-    left: '25%',
-
-    zIndex: 100,
-  },
-});

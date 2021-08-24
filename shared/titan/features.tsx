@@ -59,7 +59,7 @@ const TitanFeatures: React.FC = () => {
           }}
         >
           <Image
-            src="/assets/img/titanwater.png"
+            src="/assets/img/titanwater.webp"
             alt="Saturn Moon Titan"
             width={1000}
             height={350}

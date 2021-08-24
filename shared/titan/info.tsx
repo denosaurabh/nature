@@ -6,10 +6,11 @@ const TitanInfo: React.FC = () => {
     <ContentBox center>
       <InfoBox>
         <h4>
-          But these opposite qualities does not make Titan any less good place
-          for making a civilization
+          “On Titan the molecules that have been raining down like manna from
+          heaven for the last 4 billion years might still be there largely
+          unaltered deep-frozen awaiting the chemists from Earth”
         </h4>
-        <p>Titan is full of opportunities</p>
+        <p>- Carl Sagan</p>
       </InfoBox>
     </ContentBox>
   );

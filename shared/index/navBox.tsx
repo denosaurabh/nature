@@ -24,7 +24,7 @@ const IndexNavBar: React.FC = () => {
       <PlanetBox>
         <span>02.</span>
         <h3 onClick={() => router.push('/kepler')}>Kepler 62F &#x2197;</h3>
-        <p>A possible big earth and massive water world. </p>
+        <p>A possible Super Earth and massive water world. </p>
       </PlanetBox>
       <PlanetBox>
         <span>03.</span>

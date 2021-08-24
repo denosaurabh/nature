@@ -31,10 +31,6 @@ interface PageProps {
 const HorizontalPage: React.FC<PageProps> = ({ children, id }) => {
   const router = useRouter();
 
-  const handleAnimationComplete = () => {
-    console.log('Animation complete');
-  };
-
   return (
     <PageStyled
       id={id}
@@ -44,7 +40,6 @@ const HorizontalPage: React.FC<PageProps> = ({ children, id }) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      onAnimationComplete={handleAnimationComplete}
     >
       <VisibleGrid />
       <PlanetHeader />

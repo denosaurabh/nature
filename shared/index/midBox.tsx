@@ -6,7 +6,7 @@ const IndexMidBox: React.FC = () => {
     <MidBox>
       <AnimatedImageVertical
         className="header-img"
-        src="/assets/img/titanwater.png"
+        src="/assets/img/titanwater.webp"
         alt="Saturn Moon Titan"
         width={600}
         height={600}

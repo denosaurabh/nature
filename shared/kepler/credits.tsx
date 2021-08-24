@@ -22,6 +22,13 @@ const KeplerCredits: React.FC = () => {
       >
         https://en.wikipedia.org/wiki/Kepler-62f
       </Text>
+      <Text
+        as="a"
+        href="https://exoplanets.nasa.gov/resources/122/kepler-62f-a-small-habitable-zone-world-artist-concept/"
+        target="_blank"
+      >
+        https://exoplanets.nasa.gov/resources/122/kepler-62f-a-small-habitable-zone-world-artist-concept/
+      </Text>
     </ContentBox>
   );
 };
