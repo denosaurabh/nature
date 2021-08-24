@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Nature](https://nature-denosaurabh.vercel.app/)
 
-## Getting Started
+Journey to distant planets and moons where we will explore how potential alien life may look like, nature and their hidden secrets.
 
-First, run the development server:
+This website is built for a WebJam I have participated in. The WebJam was organized by a very big and amazing discord community called [Webdev and Web Design](https://discord.gg/web).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+&nbsp;
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## WebJam Status
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The theme of the project was "Nature", but mistakes were made. Initially, I thought to make a project where I will explore how alien nature may look like in planets & moons where life is possible. But, I ended up making a project about planets & moons where life may be possible, and not talking about Nature at all.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+As the day of writing, this is the last day of submission, so I will keep updating the status of the project after submission.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+&nbsp;
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+The primary libraries & framework used in making of this website is:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [NextJS](https://nextjs.org/) as the main React Framework.
+- [Preact](https://preactjs.com/) in combination with NextJS for optimization & reducing bundle size
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [Stitches](https://stitches.dev/) for UI components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+&nbsp;
 
-## Deploy on Vercel
+## Developer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+&nbsp;
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### DenoSaurabh
+
+<img src="https://i.ibb.co/m56K1N1/dinosaur.png" width="100" height="100">
+
+- [Github](https://github.com/denosaurabh)
+- [Twitter](https://twitter.com/denosaurabh)
+
+&nbsp;
