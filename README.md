@@ -2,6 +2,9 @@
 
 Journey to distant planets and moons where we will explore how potential alien life may look like, nature and their hidden secrets.
 
+![image](https://user-images.githubusercontent.com/55626361/130595985-d364b563-acf7-4e7c-8e6c-465bdfe8a74c.png)
+
+
 This website is built for a WebJam I have participated in. The WebJam was organized by a very big and amazing discord community called [Webdev and Web Design](https://discord.gg/web).
 
 &nbsp;
