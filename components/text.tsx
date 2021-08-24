@@ -1,6 +1,6 @@
 import { styled } from '@styled';
 
-const Text = styled('div', {
+const Text = styled('p', {
   fontFamily: '$modernist',
   fontSize: '1.8rem',
   color: '#383838',

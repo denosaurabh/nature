@@ -9,6 +9,7 @@ import KeplerGallery from '@shared/kepler/gallery';
 import KeplerHeading from '@shared/kepler/heading';
 import KeplerLife from '@shared/kepler/life';
 import KeplerEnd from '@shared/kepler/end';
+import KeplerMission from '@shared/kepler/mission';
 
 const Kepler: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const Kepler: React.FC = () => {
       <KeplerFeatures />
       <KeplerHeading />
       <KeplerLife />
+      <KeplerMission />
       <KeplerEnd />
       <KeplerCredits />
       <KeplerNavBox />

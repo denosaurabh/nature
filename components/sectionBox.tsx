@@ -24,6 +24,11 @@ const SectionBox = styled('div', {
 
     zIndex: 100,
   },
+
+  p: {
+    position: 'absolute',
+    bottom: '-10%',
+  },
 });
 
 export default SectionBox;

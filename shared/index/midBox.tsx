@@ -13,11 +13,11 @@ const IndexMidBox: React.FC = () => {
       />
 
       <TextBox>
-        <s style={{ textDecorationThickness: '2rem' }}>
-          Velit euismod nunc, neque, volutpat imperdiet adipiscing malesuada
-          aliquam. Ut fames ultricies luctus ac. In leo luctus viverra
-          malesuada. Sagittis vitae habitant nullam nisi at enim.
-        </s>
+        <p>
+          What is there beyond our own Earth, and we do get to know much more
+          about this universe. But, still, there is a lot of mystery,
+          particularly about extraterrestrial life.
+        </p>
         <p>
           Journey to distant planets and moons where we will explore how
           potential alien life may look like, nature and their hidden secrets.

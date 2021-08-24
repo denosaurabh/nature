@@ -21,12 +21,12 @@ const KeplerFeatures: React.FC = () => {
           <h5>CLIMATE</h5>
           <p>
             Kepler 62F is expected to be a water ocean-covered planet with
-            possessing rocks. It is also seems to have enough CO<sub>2</sub>,
-            otherwise it may be entirely covered with ice. Furthur search and
-            studies suggest that it also exhibit atmosphere that ranges in
-            thickness from the same as Earth&apos;s all the way up to 12 times
-            thicker than our planet&apos;s, and there may have have seasons and
-            a climate similar to those on Earth.
+            possessing rocks. It also seems to have enough CO<sub>2</sub>,
+            otherwise, it may be entirely covered with ice. Furthur search and
+            studies suggest that it also exhibit an atmosphere that ranges in
+            thickness from the same as Earth&apos;s up to 12 times thicker than
+            our planet&apos;s, and there may have had seasons and a climate
+            similar to those on Earth.
           </p>
         </FeatureBox>
         <FeatureBox

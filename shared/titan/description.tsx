@@ -26,9 +26,9 @@ const TitanDescription: React.FC = () => {
           Titan is a very interesting moon to explore. The moon itself is named
           for the Titans of Greek mythology, which include Cronus (equated with
           the Roman god Saturn) and his 11 siblings. It is about 9.54 AU far
-          from sun, and only about 1% of heat compared to earth get received by
-          Titan. Scientists believe that current conditions of Titan are very
-          similar to those of early Earth, but at much lower temperature.
+          from Sun, and only about 1% of heat compared to earth gets received by
+          Titan. Scientists believe that the current conditions of Titan are
+          very similar to those of early Earth but at a much lower temperature.
         </p>
         <br />
         <br />

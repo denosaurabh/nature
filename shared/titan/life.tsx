@@ -26,27 +26,27 @@ const TitanLife: React.FC = () => {
           Titan has a very cold surface for life as we know it to survive. But,
           Titan is also very rich in organic compounds. Scientists believe
           microbial life could be present beneath the surface, where oceans of
-          liquid water exists.
+          liquid water exist.
         </Text>
 
         <Text css={{ marginTop: '6rem' }}>
-          Another research say that life could also exist on the lakes of liquid
-          methane on Titan. Such organisms would inhale H<sub>2</sub> in place
-          of O<sub>2</sub>, metabolize it with acetylene instead of glucose, and
-          exhale methane instead of carbon dioxide.
+          Another research says that life could also exist on the lakes of
+          liquid methane on Titan. Such organisms would inhale H<sub>2</sub> in
+          place of O<sub>2</sub>, metabolize it with acetylene instead of
+          glucose, and exhale methane instead of carbon dioxide.
         </Text>
       </ContentBox>
       <ContentBox css={{ width: '50rem' }} flex flexColumn center>
         <Text css={{ marginTop: '6rem' }}>
-          Since then there has been experiments and research going on weather
-          how such methanogenic life forms can exist in such exvironments and
-          evidences that can prove their presence.
+          Since then there have been experiments and research going on the
+          weather how such methanogenic life forms can exist in such
+          environments and evidence that can prove their presence.
         </Text>
 
         <Text css={{ marginTop: '6rem' }}>
-          All these are speculations & what research may says, but still Titan
+          All these are speculations & what research may say, but still, Titan
           is a very interesting place to know more about life and how it could
-          have started in our own planet in it&apos;s early days.
+          have started on our own planet in its early days.
         </Text>
       </ContentBox>
     </>

@@ -24,22 +24,21 @@ const TitanMission: React.FC = () => {
 
       <ContentBox css={{ width: '50rem' }} flex flexColumn center>
         <Text>
-          In the past there has been a mission to study Saturn and it&apos;s
-          moons called Cassini Huygens. This mission learned a lot about Saturn
-          and it&apos;s moons and was the first to enter the orbit of Saturn.
-          During it&apos;s mission, a probe was sent to the Titan in order to
-          study the moon. This mission was first launched on October 15, 1997,
-          made it&apos;s landing on Titan on January 15, 2005, and ended its
-          journey on September 15, 2017.
+          In the past, there has been a mission to study Saturn and its moons
+          called Cassini Huygens. This mission learned a lot about Saturn and
+          its moons and was the first to enter the orbit of Saturn. During its
+          mission, a probe was sent to the Titan to study the moon. This mission
+          was first launched on October 15, 1997, made its landing on Titan on
+          January 15, 2005, and ended its journey on September 15, 2017.
         </Text>
 
         <Text css={{ marginTop: '6rem' }}>
           But that&apos;s not it. Nasa has planned a mission to Titan called
-          &quot;Dragonfly&quot; in intention of studying it&apos;s prebiotic
+          &quot;Dragonfly&quot; with intention of studying its prebiotic
           chemistry and extraterrestrial habitability. It is a robotic
-          rotorcraft that will fly in the atmosphere of Titan doing it&apos;s
-          research and exploring Titan. The mission is planned to launch on June
-          2027, where it is expected to reach Saturn and land on Titan in 2036.
+          rotorcraft that will fly in the atmosphere of Titan doing its research
+          and exploring Titan. The mission is planned to launch on June 2027,
+          where it is expected to reach Saturn and land on Titan in 2036.
         </Text>
       </ContentBox>
     </>
