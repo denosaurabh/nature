@@ -29,7 +29,7 @@ const IndexNavBar: React.FC = () => {
       <PlanetBox>
         <span>03.</span>
         <h3 onClick={() => router.push('/')}>???</h3>
-        <p>Coming Soon</p>
+        <p>Who this possibly can be?</p>
       </PlanetBox>
     </NavBox>
   );
